@@ -2,7 +2,7 @@ const  { Schema } = require('mongoose')
 
 const guitarSchema = new Schema(
     {
-        name: { type: String, required: true },
+        modelName: { type: String, required: true },
         brand: { type: String, required: true },
         type:{type: String, required: true},
         averagePrice:{type: Number, required: true},
