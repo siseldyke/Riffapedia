@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const logger = require('morgan');
 const guitaristController = require(`./controllers/guitaristController`)
 const guitarController = require(`./controllers/guitarController`)
-// const brandController = require(`./controllers/brandController`)
+const brandController = require(`./controllers/brandController`)
 
 const app = express()
 app.use(logger('dev'))
@@ -20,12 +20,12 @@ app.get('/', (req, res) => {
 
 app.get('/guitarists', guitaristController.getAllGuitarists)
 
-app.get('/guitarist/names/:name', guitaristController.getGuitaristByName)
-app.get('/guitarist/ages/:age', guitaristController.getGuitaristByAge)
-app.get('/guitarist/:id', guitaristController.getGuitaristById)
-app.post('/guitarist', guitaristController.createGuitarist)
-app.put('/guitarist/:id', guitaristController.updateGuitarist)
-app.delete('/guitarist/:id',guitaristController.deleteGuitarist)
+app.get('/guitarists/names/:name', guitaristController.getGuitaristByName)
+app.get('/guitarists/ages/:age', guitaristController.getGuitaristByAge)
+app.get('/guitarists/:id', guitaristController.getGuitaristById)
+app.post('/guitarists', guitaristController.createGuitarist)
+app.put('/guitarists/:id', guitaristController.updateGuitarist)
+app.delete('/guitarists/:id',guitaristController.deleteGuitarist)
 
 app.get('/guitars', guitarController.getAllGuitars)
 
@@ -36,8 +36,12 @@ app.post('/guitars', guitarController.createGuitar)
 app.put('/guitars/:id', guitarController.updateGuitar)
 app.delete('/guitars/:id', guitarController.deleteGuitar)
 
+app.get('/brands', brandController.getAllBrands)
 
-
+app.get('/brands/:id', brandController.getBrandById)
+app.post('/brands', brandController.createBrand)
+app.put('/brands/:id', brandController.updateBrand)
+app.delete('/brands/:id', brandController.deleteBrand)
 
 
 app.listen(PORT, () => {

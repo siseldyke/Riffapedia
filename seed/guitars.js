@@ -28,7 +28,7 @@ const guitars =[
     },
     {
         modelName: 'PRS SE Santana',
-        brand: 'PRS',
+        brand: 'prs',
         type:'electric',
         averagePrice: 3000,
         description: 'etc',
@@ -37,7 +37,7 @@ const guitars =[
     },
     {
         modelName: 'Fender Stratocaster Olympic White',
-        brand: 'Fender',
+        brand: 'fender',
         type:'electric',
         averagePrice: 1199,
         description: 'etc',

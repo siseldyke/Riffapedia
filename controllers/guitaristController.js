@@ -14,7 +14,7 @@ const getGuitaristById = async (req, res) => {
   try {
     const id = req.params.id;
     const guitarist = await Guitarist.findById(id);
-    if (!guitarist) throw new Error('cant find that axe, dude');
+    if (!guitarist) throw new Error('cant find that guitarist, dude');
     res.json(guitarist);
   } catch (error) {
     console.error(error);
