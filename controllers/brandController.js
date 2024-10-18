@@ -39,7 +39,7 @@ const createBrand = async (req, res) => {
           let { id } = req.params;
           let brand = await Brand.findByIdAndUpdate(id, req.body, { new: true })
           if (brand) {
-              return res.status(200).json(bike)
+              return res.status(200).json(brand)
           }
           throw new Error("brand not found dude")
       } catch (error) {

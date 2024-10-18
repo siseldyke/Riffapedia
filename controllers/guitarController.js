@@ -15,7 +15,7 @@ const getGuitarById = async (req, res) => {
     const id = req.params.id;
     const guitar = await Guitar.findById(id);
     if (!guitar) throw new Error('cant find that axe, dude');
-    res.json(bike);
+    res.json(guitar);
   } catch (error) {
     console.error(error);
     res.status(404).send('cant find that axe, dude');
@@ -65,7 +65,7 @@ const updateGuitar = async (req, res) => {
         let { id } = req.params;
         let guitar = await Guitar.findByIdAndUpdate(id, req.body, { new: true })
         if (guitar) {
-            return res.status(200).json(bike)
+            return res.status(200).json(guitar)
         }
         throw new Error("guitar not found dude")
     } catch (error) {

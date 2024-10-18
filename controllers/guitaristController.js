@@ -65,7 +65,7 @@ const updateGuitarist = async (req, res) => {
         let { id } = req.params;
         let guitarist = await Guitarist.findByIdAndUpdate(id, req.body, { new: true })
         if (guitarist) {
-            return res.status(200).json(bike)
+            return res.status(200).json(guitarist)
         }
         throw new Error("guitarist not found dude")
     } catch (error) {
