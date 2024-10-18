@@ -1,4 +1,9 @@
+const db = require(`../db`)
+const {Guitar} = require(`../models`)
 
+db.on(`error`, console.error.bind(console, `MongoDB connection error:`))
+
+const main = async () => {
 
 
 
@@ -94,3 +99,12 @@ const guitars =[
         
     },
 ]
+await Guitar.insertMany(guitars)
+console.log('Bikes Saved')
+}
+const run = async () => {
+await main()
+db.close()
+}
+
+run()
