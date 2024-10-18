@@ -100,7 +100,7 @@ const guitars =[
     },
 ]
 await Guitar.insertMany(guitars)
-console.log('Bikes Saved')
+console.log('Guitars made')
 }
 const run = async () => {
 await main()

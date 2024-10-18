@@ -1,58 +1,58 @@
-const { Bikes } = require('../models')
+const { Guitarist } = require('../models')
 
-const getAllBikes = async (req, res) => {
+const getAllGuitarists = async (req, res) => {
   try {
-    const bikes = await Bikes.find({})
-    res.json(bikes)
+    const guitarists = await Guitarist.find({})
+    res.json(guitarists)
   } catch (error) {
     console.error(error)
-    res.status(500).send('Error fetching bikes')
+    res.status(500).send('Error fetching guitarists')
   }
 }
 
-const getBikeById = async (req, res) => {
+const getGuitaristById = async (req, res) => {
   try {
     const id = req.params.id;
-    const bike = await Bikes.findById(id);
-    if (!bike) throw new Error('404 Bike not found');
-    res.json(bike);
+    const guitarist = await Guitarist.findById(id);
+    if (!guitarist) throw new Error('cant find that axe, dude');
+    res.json(guitarist);
   } catch (error) {
     console.error(error);
-    res.status(404).send('Bike not found');
+    res.status(404).send('cant find that shredder, dude');
   }
 }
 
-const getBikeByType = async (req, res) => {
+const getGuitaristByName = async (req, res) => {
   try { 
-      const bike = await Bikes.find( {'type': req.params.type})
-      console.log(bike)
-      if (bike) {
-          return res.json(bike);
+      const guitarist = await Guitarist.find( {'name': req.params.name})
+      console.log(guitarist)
+      if (guitarist) {
+          return res.json(guitarist);
       }
-      return res.status(404).send('bike type not found');
+      return res.status(404).send('totally not a name for a player dude');
   } catch (error) {
-      return res.status(500).send(error.message);
+      return res.status(500).send('totally not a name for a player dude');
   }
 }
 
-const getBikeByBrand = async (req, res) => {
+const getGuitaristByAge = async (req, res) => {
   try {
-      const bike = await Bikes.find( {'brand': req.params.brand})
-      if (bike) {
-          return res.json(bike);
+      const guitarist = await Guitarist.find( {'age': req.params.age})
+      if (guitarist) {
+          return res.json(guitarist);
       }
-      return res.status(404).send('bike brand not found');
+      return res.status(404).send('bro are you sure thats an age');
   } catch (error) {
-      return res.status(500).send(error.message);
+      return res.status(500).send('bro are you sure thats an age?');
   }
 }
 
-const createBike = async (req, res) => {
+const createGuitarist = async (req, res) => {
   try {
-      const bike = await new Bikes(req.body)
-      await bike.save()
+      const guitarist = await new Guitarist(req.body)
+      await guitarist.save()
       return res.status(201).json({
-          bike,
+          guitarist,
       });
   } catch (error) {
       return res.status(500).json({ error: error.message })
@@ -60,28 +60,28 @@ const createBike = async (req, res) => {
 }
 
 
-const updateBike = async (req, res) => {
+const updateGuitarist = async (req, res) => {
     try {
         let { id } = req.params;
-        let bike = await Bikes.findByIdAndUpdate(id, req.body, { new: true })
-        if (bike) {
+        let guitarist = await Guitarist.findByIdAndUpdate(id, req.body, { new: true })
+        if (guitarist) {
             return res.status(200).json(bike)
         }
-        throw new Error("bike not found")
+        throw new Error("guitarist not found dude")
     } catch (error) {
         return res.status(500).send(error.message);
     }
 }
 
 
-const deleteBike= async (req, res) => {
+const deleteGuitarist = async (req, res) => {
     try {
         const { id } = req.params;
-        const deleted = await Bikes.findByIdAndDelete(id)
+        const deleted = await Guitarist.findByIdAndDelete(id)
         if (deleted) {
-            return res.status(200).send("Bike has been deleted");
+            return res.status(200).send("Removed the dude from existence bro");
         }
-        throw new Error("bike not found");
+        throw new Error("guitarist not found dude");
     } catch (error) {
         return res.status(500).send(error.message);
     }
@@ -89,11 +89,11 @@ const deleteBike= async (req, res) => {
 
 
 module.exports = {
-  getAllBikes,
-  getBikeById,
-  getBikeByType,
-  getBikeByBrand,
-  createBike,
-  updateBike,
-  deleteBike
+  getAllGuitarists,
+  getGuitaristById,
+  getGuitaristByName,
+  getGuitaristByAge,
+  createGuitarist,
+  updateGuitarist,
+  deleteGuitarist
 }
