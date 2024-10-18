@@ -16,6 +16,12 @@ Must haves: search, random guitarist button, new pages brought up when clicking 
 
 full details of specific models of guitars within their pages, year, brand, model, avg price, in production or production stopped
 
+brand of guitar presented as:
+![image](https://github.com/user-attachments/assets/bf547579-5fa2-4c72-9c60-3fb0e2322d4b)
+
+then when clicked goes to page with the other models used, for example: gilmours strat, joe strummers telecaster, kurt cobains jagmaster
+
+
 
 must wants: background of guitarist page changes specifically to their band of fame (we want rage against the machine for tom morello, no disrespect to prophets of rage),
 link to biggest/ or recent hits, (WATCH THE VOLUME)
