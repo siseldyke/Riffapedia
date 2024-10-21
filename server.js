@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 
 app.get('/guitarists', guitaristController.getAllGuitarists)
 
-app.get('/guitarists/names/:name', guitaristController.getGuitaristByName)
+app.get('/guitarists/names/:Name', guitaristController.getGuitaristByName)
 app.get('/guitarists/ages/:age', guitaristController.getGuitaristByAge)
 app.get('/guitarists/:id', guitaristController.getGuitaristById)
 app.post('/guitarists', guitaristController.createGuitarist)

@@ -24,13 +24,16 @@ const getGuitaristById = async (req, res) => {
 
 const getGuitaristByName = async (req, res) => {
   try { 
-      const guitarist = await Guitarist.find( {'name': req.params.name})
+      const {Name} = req.params
+      const {guitarist} = await Guitarist.find( {name: {$regex: new RegExp(Name, 'i')}})
       console.log(guitarist)
-      if (guitarist) {
+      if (guitarist.length > 0) {
           return res.json(guitarist);
       }
-      return res.status(404).send('totally not a name for a player dude');
+      return res.status(404).send(`cant find ${Name} anywhere dude`);
   } catch (error) {
+    if (error.name === 'CastError' && error.kind === 'ObjectId')
+      return res.status(404).send('dont think that person exists bro');
       return res.status(500).send('totally not a name for a player dude');
   }
 }
