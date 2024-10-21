@@ -26,7 +26,7 @@ const getGuitaristByName = async (req, res) => {
   try { 
       const {Name} = req.params
       console.log(Name)
-      const guitarist = await Guitarist.find( {'name': new RegExp(Name, 'i')})
+      const guitarist = await Guitarist.find( {'name': new RegExp(Name, 'i')}).populate('guitar')
       console.log(guitarist)
       if (guitarist.length > 0) {
           return res.json(guitarist);
