@@ -12,16 +12,31 @@ const audio = document.querySelector("audio")
 const excellentButton = document.querySelector('#excellent')
 
 
-// const getGuitarists = async() => {
-//     const response = await axios.get(
-//         `http://localhost:3001/guitarists/`
-//     )
-//     console.log(response.data)
-//     let num = []
-//     for (i =0; i < 10; i++) num[i] = i;
-//     Math.floor(Math.random(num) * 10);
-// }
-// getGuitarists()
+const getGuitarists = async() => {
+    const response = await axios.get(
+        `http://localhost:3001/guitarists/`
+    )
+    let i = Math.floor(Math.random() * 10)
+    let guitaristName = response.data[i].name
+    nameContainer.textContent = (guitaristName)
+
+    let guitaristImage = response.data[i].image
+    imageContainer.setAttribute('src', guitaristImage)
+
+    // let guitarName = response.data[i].guitar.modelName
+    // guitarNameContainer.textContent = (guitarName)
+
+    // let guitarImage = response.data[i].guitar.image
+    // guitarContainer.setAttribute('src', guitarImage)
+    console.log(response.data)
+
+    
+
+    // let guitaristName = response.data[i].name
+    // nameContainer.textContent = (guitaristName)
+    // console.log(i)
+}
+getGuitarists()
 
 // make randomNumberGenerator 0-9 as numbers, sets a random number "i"
 //everytime the page loads somewhere between 18-20 in get guitarist function
@@ -61,6 +76,7 @@ textInput.addEventListener('keyup' , async (event) => {
     }
 })
 excellentButton.addEventListener('click', async () =>{
+    audio.volume =0.3
     audio.play()
 })
 // document.addEventListener("DOMContentLoaded", function() {
