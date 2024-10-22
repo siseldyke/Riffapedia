@@ -9,6 +9,27 @@ const nextButton = document.querySelector('#nextGuitarist')
 const prevButton = document.querySelector('#previousGuitarist')
 const textInput = document.querySelector('#textInput')
 
+
+
+const getGuitarists = async() => {
+    const response = await axios.get(
+        `http://localhost:3001/guitarists/`
+    )
+    console.log(response.data)
+}
+getGuitarists()
+
+// make randomNumberGenerator 0-9 as numbers, sets a random number "i"
+//everytime the page loads somewhere between 18-20 in get guitarist function
+// have the random generator number function go
+//h1.innerhtml = response.data[i]name 
+//img.innerHTML = response.data[i].imgae, .guiat .guitar.image
+
+
+
+
+
+
 button.addEventListener('click',  async () => {
     let name = input.value
     let response = await axios.get(
@@ -39,3 +60,5 @@ textInput.addEventListener('keyup' , async (event) => {
 //     your_function();
 //   });
 //guitarist.guitar.image etc
+
+//dogs api for reference, array of ids, random number generator
