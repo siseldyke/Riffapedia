@@ -3,6 +3,7 @@ const input = document.querySelector('#textInput')
 const nameContainer = document.querySelector('#guitaristName')
 
 const imageContainer = document.querySelector('#guitaristImage')
+const guitarNameContainer = document.querySelector('#guitarName')
 const guitarContainer = document.querySelector('#guitarImage')
 const nextButton = document.querySelector('#nextGuitarist')
 const prevButton = document.querySelector('#previousGuitarist')
@@ -20,6 +21,9 @@ button.addEventListener('click',  async () => {
 
     let guitaristImage = response.data[0].image
     imageContainer.setAttribute('src', guitaristImage)
+
+    let guitarName = response.data[0].guitar.modelName
+    guitarNameContainer.textContent = (guitarName)
 
     let guitarImage = response.data[0].guitar.image
     guitarContainer.setAttribute('src', guitarImage)
@@ -46,4 +50,7 @@ textInput.addEventListener('keyup' , async (event) => {
         button.click()
     }
 })
+// document.addEventListener("DOMContentLoaded", function() {
+//     your_function();
+//   });
 //guitarist.guitar.image etc

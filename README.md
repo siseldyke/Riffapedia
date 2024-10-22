@@ -33,3 +33,11 @@ relations:
 
 front end ideas:
 ![image](https://github.com/user-attachments/assets/550e022c-d495-4d39-9b41-5195063851df)
+
+
+sources:
+https://www.shecodes.io/athena/36478-how-to-create-a-search-input-and-button-in-javascript
+
+https://www.w3schools.com/jsref/event_onload.asp
+
+https://stackoverflow.com/questions/3842614/how-do-i-call-a-javascript-function-on-page-load
