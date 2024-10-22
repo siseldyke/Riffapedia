@@ -8,23 +8,27 @@ const guitarContainer = document.querySelector('#guitarImage')
 const nextButton = document.querySelector('#nextGuitarist')
 const prevButton = document.querySelector('#previousGuitarist')
 const textInput = document.querySelector('#textInput')
+const audio = document.querySelector("audio")
+const excellentButton = document.querySelector('#excellent')
 
 
-
-const getGuitarists = async() => {
-    const response = await axios.get(
-        `http://localhost:3001/guitarists/`
-    )
-    console.log(response.data)
-}
-getGuitarists()
+// const getGuitarists = async() => {
+//     const response = await axios.get(
+//         `http://localhost:3001/guitarists/`
+//     )
+//     console.log(response.data)
+//     let num = []
+//     for (i =0; i < 10; i++) num[i] = i;
+//     Math.floor(Math.random(num) * 10);
+// }
+// getGuitarists()
 
 // make randomNumberGenerator 0-9 as numbers, sets a random number "i"
 //everytime the page loads somewhere between 18-20 in get guitarist function
 // have the random generator number function go
-//h1.innerhtml = response.data[i]name 
+//h1.innerHTML = response.data[i]name 
 //img.innerHTML = response.data[i].imgae, .guiat .guitar.image
-
+//possibly list tags
 
 
 
@@ -55,6 +59,9 @@ textInput.addEventListener('keyup' , async (event) => {
     if (event.key === 'Enter') {
         button.click()
     }
+})
+excellentButton.addEventListener('click', async () =>{
+    audio.play()
 })
 // document.addEventListener("DOMContentLoaded", function() {
 //     your_function();
