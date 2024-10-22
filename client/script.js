@@ -23,11 +23,11 @@ const getGuitarists = async() => {
     let guitaristImage = response.data[i].image
     imageContainer.setAttribute('src', guitaristImage)
 
-    // let guitarName = response.data[i].guitar.modelName
-    // guitarNameContainer.textContent = (guitarName)
+    let guitarName = response.data[i].guitar.modelName
+    guitarNameContainer.textContent = (guitarName)
 
-    // let guitarImage = response.data[i].guitar.image
-    // guitarContainer.setAttribute('src', guitarImage)
+    let guitarImage = response.data[i].guitar.image
+    guitarContainer.setAttribute('src', guitarImage)
     console.log(response.data)
 
     

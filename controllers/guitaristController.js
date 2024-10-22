@@ -2,7 +2,7 @@ const { Guitarist } = require('../models')
 
 const getAllGuitarists = async (req, res) => {
   try {
-    const guitarists = await Guitarist.find({})
+    const guitarists = await Guitarist.find({}).populate('guitar')
     res.json(guitarists)
   } catch (error) {
     console.error(error)
