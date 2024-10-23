@@ -11,6 +11,16 @@ const textInput = document.querySelector('#textInput')
 const audio = document.querySelector("audio")
 const excellentButton = document.querySelector('#excellent')
 
+const guitaristBandContainer = document.querySelector('#guitaristBand')
+const guitaristAgeContainer = document.querySelector('#guitaristAge')
+const guitaristDesContainer = document.querySelector('#guitaristDescription')
+const guitarBrandContainer = document.querySelector('#guitarBrand')
+const guitarTypeContainer = document.querySelector('#guitarType')
+const guitarPriceContainer = document.querySelector('#guitarPrice')
+const guitarDescContainer = document.querySelector('#guitarDetails')
+const hiddenGuitaristDetails = document.querySelector('#guitaristDetails')
+const hiddenGuitarDetails = document.querySelector('#guitarDetails')
+
 
 const getGuitarists = async() => {
     const response = await axios.get(
@@ -23,19 +33,43 @@ const getGuitarists = async() => {
     let guitaristImage = response.data[i].image
     imageContainer.setAttribute('src', guitaristImage)
 
+    let guitaristBand = response.data[i].band
+    guitaristBandContainer.textContent = (" band: ", guitaristBand)
+
+    let guitaristAge = response.data[i].age
+    guitaristAgeContainer.textContent = (" age: " ,guitaristAge)
+
+    let guitaristDesc = response.data[i].description
+    guitaristDesContainer.textContent = ("description " ,guitaristDesc)
+
     let guitarName = response.data[i].guitar.modelName
     guitarNameContainer.textContent = (guitarName)
 
     let guitarImage = response.data[i].guitar.image
     guitarContainer.setAttribute('src', guitarImage)
-    console.log(response.data)
+    
+    let guitarBrand= response.data[i].guitar.brand
+    guitarBrandContainer.textContent = ("brand: " ,guitarBrand)
+
+    let guitarType = response.data[i].guitar.type
+    guitarTypeContainer.textContent = ("type: ",guitarType)
+
+    let guitarPrice= response.data[i].guitar.averagePrice
+    guitarPriceContainer.textContent = ("average price: " ,guitarPrice)
+
+    let guitarDesc = response.data[i].guitar.description
+    guitarDescContainer.textContent = ("description: ",guitarDesc)
+
+
 
 
 }
 getGuitarists()
-
-
-
+//assign a value to ids in a variable
+//div has initial styling of none
+//first step get info on screen in seperate section
+//create an array of objects that has name or band as key, then a url to image
+//
 
 
 
@@ -71,13 +105,23 @@ excellentButton.addEventListener('click', async () =>{
     audio.play()
 })
 
-// guitaristImage.addEventListener('click',async () => {
-//     let response = await axios.get(
-//         `http://localhost:3001/guitarists/${id}`
-//     )
-//     console.log(response)
-// })
+guitaristImage.addEventListener('click',async () => {  
+    if (hiddenGuitaristDetails.style.display === "none" || hiddenGuitaristDetails.style.display === ""){
+        hiddenGuitaristDetails.style.display ="block"
+    } else {
+        hiddenGuitaristDetails.style.display = "none" 
+    }
+    
+})
 
+
+guitarImage.addEventListener('click',async () => {
+    if (hiddenGuitarDetails.style.display === "none" || hiddenGuitarDetails.style.display === ""){
+        hiddenGuitarDetails.style.display ="block"
+    } else {
+        hiddenGuitarDetails.style.display = "none" 
+    }
+})
 
 
 

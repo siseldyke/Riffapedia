@@ -1,8 +1,12 @@
-/* body{
-    
-} */
+body{
+    font-family: "New Rocker", system-ui;
+}
 
-
+.new-rocker-regular {
+    font-family: "New Rocker", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
 header {
     display: flex;
     flex-direction: column;
@@ -31,17 +35,21 @@ main {
 
  * {cursor: url(https://cur.cursors-4u.net/others/oth-5/oth481.cur), auto !important;
 }
-
+#guitaristDetails{
+    display: none;
+}
+#guitarDetails{
+    display: none;
+}
 footer{
     display: flex;
     flex-direction: row;
-    align-self: flex-end;
-    padding-top: 10%;
+    justify-content: center;
 }
 #billAndTed{
     display: flex;
     padding-top: 10%;
-    align-self: flex-end;
+    
     max-width: 200px; 
     max-height: 200px;
 }
