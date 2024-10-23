@@ -81,8 +81,9 @@ excellentButton.addEventListener('click', async () =>{
 
 
 
-
-
+//same html have some elements that can pop out and show
+//make on click event for pictures that shows the stuff, possibly hide on another click
+//
 
 
 //dogs api for reference, array of ids, random number generator

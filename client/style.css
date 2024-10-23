@@ -3,17 +3,20 @@
 } */
 
 
-header{
+header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: gray;
+    
 }
 
-main{
+
+main {
     display: flex;
     flex-direction: row;
-    align-items: center
-    
+    align-items: center;
+    justify-content: space-around;
 }
 
 #guitaristImage{
@@ -27,9 +30,17 @@ main{
 }
 
  * {cursor: url(https://cur.cursors-4u.net/others/oth-5/oth481.cur), auto !important;
-} 
+}
+
+footer{
+    display: flex;
+    flex-direction: row;
+    align-self: flex-end;
+    padding-top: 10%;
+}
 #billAndTed{
     display: flex;
+    padding-top: 10%;
     align-self: flex-end;
     max-width: 200px; 
     max-height: 200px;
