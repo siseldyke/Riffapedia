@@ -1,4 +1,4 @@
-const { Brand } = require('../models')
+const { Brand, Guitar } = require('../models')
 
 const getAllBrands = async (req, res) => {
   try {
@@ -27,9 +27,10 @@ const getBrandByName = async (req, res) => {
       const {Name} = req.params
       console.log(Name)
       const brand = await Brand.find( {'name': new RegExp(Name, 'i')})
-      console.log(brand)
+      const guitars = await Guitar.find( {'brand': Name})
+      console.log(guitars, brand)
       if (brand.length > 0) {
-          return res.json(brand);
+          return res.json({brand, guitars});
       }
       return res.status(404).send(`cant find ${Name} anywhere dude`);
   } catch (error) {

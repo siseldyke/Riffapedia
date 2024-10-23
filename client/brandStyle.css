@@ -33,3 +33,13 @@ header {
     display: none;
     font-size: 40px;
 }
+#guitarlist{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#guitarlist img{
+    max-width: 200px;
+    max-height: 200px;
+    
+}
