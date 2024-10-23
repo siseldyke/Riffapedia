@@ -21,6 +21,24 @@ const getBrandById = async (req, res) => {
     res.status(404).send('cant find that brand, dude');
   }
 }
+
+const getBrandByName = async (req, res) => {
+  try { 
+      const {Name} = req.params
+      console.log(Name)
+      const brand = await Brand.find( {'name': new RegExp(Name, 'i')})
+      console.log(brand)
+      if (brand.length > 0) {
+          return res.json(brand);
+      }
+      return res.status(404).send(`cant find ${Name} anywhere dude`);
+  } catch (error) {
+    if (error.name === 'CastError' && error.kind === 'ObjectId')
+      return res.status(404).send('dont think that brand exists bro');
+      return res.status(500).send('totally not a name for a brand dude');
+  }
+}
+
 const createBrand = async (req, res) => {
     try {
         const brand = await new Brand(req.body)
@@ -65,6 +83,7 @@ const createBrand = async (req, res) => {
   module.exports = {
     getAllBrands,
     getBrandById,
+    getBrandByName,
     createBrand,
     updateBrand,
     deleteBrand

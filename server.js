@@ -37,7 +37,7 @@ app.put('/guitars/:id', guitarController.updateGuitar)
 app.delete('/guitars/:id', guitarController.deleteGuitar)
 
 app.get('/brands', brandController.getAllBrands)
-
+app.get('/brands/:Name', brandController.getBrandByName)
 app.get('/brands/:id', brandController.getBrandById)
 app.post('/brands', brandController.createBrand)
 app.put('/brands/:id', brandController.updateBrand)

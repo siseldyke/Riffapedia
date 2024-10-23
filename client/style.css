@@ -1,5 +1,8 @@
 body{
     font-family: "New Rocker", system-ui;
+    color: white;
+    -webkit-text-stroke: 1px black;
+    
 }
 
 .new-rocker-regular {
@@ -27,19 +30,26 @@ main {
     max-width: 600px;
     max-height: 700px;
 }
-
+#guitaristImage:hover{
+    opacity: 50%;
+}
 #guitarImage{
     max-width: 500px;
     max-height: 600px;
+}
+#guitarImage:hover{
+    opacity: 50%;
 }
 
  * {cursor: url(https://cur.cursors-4u.net/others/oth-5/oth481.cur), auto !important;
 }
 #guitaristDetails{
     display: none;
+    font-size: 30px;
 }
 #guitarDetails{
     display: none;
+    font-size: 30px;
 }
 footer{
     display: flex;

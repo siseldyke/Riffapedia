@@ -17,7 +17,7 @@ const guitaristDesContainer = document.querySelector('#guitaristDescription')
 const guitarBrandContainer = document.querySelector('#guitarBrand')
 const guitarTypeContainer = document.querySelector('#guitarType')
 const guitarPriceContainer = document.querySelector('#guitarPrice')
-const guitarDescContainer = document.querySelector('#guitarDetails')
+// const guitarDescContainer = document.querySelector('#guitarDetails')
 const hiddenGuitaristDetails = document.querySelector('#guitaristDetails')
 const hiddenGuitarDetails = document.querySelector('#guitarDetails')
 
@@ -37,7 +37,7 @@ const getGuitarists = async() => {
     guitaristBandContainer.textContent = (" band: ", guitaristBand)
 
     let guitaristAge = response.data[i].age
-    guitaristAgeContainer.textContent = (" age: " ,guitaristAge)
+    guitaristAgeContainer.textContent = ` age:  ${guitaristAge}`
 
     let guitaristDesc = response.data[i].description
     guitaristDesContainer.textContent = ("description " ,guitaristDesc)
@@ -60,7 +60,7 @@ const getGuitarists = async() => {
     let guitarDesc = response.data[i].guitar.description
     guitarDescContainer.textContent = ("description: ",guitarDesc)
 
-
+console.log(response.data[i].guitar)
 
 
 }

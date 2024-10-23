@@ -41,3 +41,5 @@ https://www.shecodes.io/athena/36478-how-to-create-a-search-input-and-button-in-
 https://www.w3schools.com/jsref/event_onload.asp
 
 https://stackoverflow.com/questions/3842614/how-do-i-call-a-javascript-function-on-page-load
+
+had help from chatgpt for the toggle function
