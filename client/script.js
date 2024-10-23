@@ -30,20 +30,11 @@ const getGuitarists = async() => {
     guitarContainer.setAttribute('src', guitarImage)
     console.log(response.data)
 
-    
 
-    // let guitaristName = response.data[i].name
-    // nameContainer.textContent = (guitaristName)
-    // console.log(i)
 }
 getGuitarists()
 
-// make randomNumberGenerator 0-9 as numbers, sets a random number "i"
-//everytime the page loads somewhere between 18-20 in get guitarist function
-// have the random generator number function go
-//h1.innerHTML = response.data[i]name 
-//img.innerHTML = response.data[i].imgae, .guiat .guitar.image
-//possibly list tags
+
 
 
 
@@ -79,9 +70,39 @@ excellentButton.addEventListener('click', async () =>{
     audio.volume =0.3
     audio.play()
 })
-// document.addEventListener("DOMContentLoaded", function() {
-//     your_function();
-//   });
-//guitarist.guitar.image etc
+
+// guitaristImage.addEventListener('click',async () => {
+//     let response = await axios.get(
+//         `http://localhost:3001/guitarists/${id}`
+//     )
+//     console.log(response)
+// })
+
+
+
+
+
+
+
 
 //dogs api for reference, array of ids, random number generator
+
+    //wrap images in "a" tag, not give it an Href/source/something
+    //setting attribute  "new  html page"
+    //same thing as a call to the images
+    //you need at least one new HTML file thats responsive to person/guitar
+    //to populate the specific info thats shown, have the href just go to 
+    //the new html page and new javascript for axios call
+
+    // let guitaristName = response.data[i].name
+    // nameContainer.textContent = (guitaristName)
+    // console.log(i)
+
+    // make randomNumberGenerator 0-9 as numbers, sets a random number "i"
+//everytime the page loads somewhere between 18-20 in get guitarist function
+// have the random generator number function go
+//h1.innerHTML = response.data[i]name 
+//img.innerHTML = response.data[i].imgae, .guiat .guitar.image
+//possibly list tags
+
+//dont use multiple html files just clear the dom out
