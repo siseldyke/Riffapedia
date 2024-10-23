@@ -24,10 +24,10 @@ button.addEventListener('click',  async () => {
    brandImageContainer.setAttribute('src', brandImage)
    
    let brandFounder= response.data[0].founder
-   brandFounderContainer.textContent = ("average price: " ,brandFounder)
+   brandFounderContainer.textContent = `Founder:  ${brandFounder}`
 
    let brandYear = response.data[0].yearFounded
-   brandYearContainer.textContent = ("description: ",brandYear)
+   brandYearContainer.textContent = `Year Founded: ${brandYear}`
 })
 
 brandTextInput.addEventListener('keyup' , async (event) => {

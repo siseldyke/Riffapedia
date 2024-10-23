@@ -34,13 +34,13 @@ const getGuitarists = async() => {
     imageContainer.setAttribute('src', guitaristImage)
 
     let guitaristBand = response.data[i].band
-    guitaristBandContainer.textContent = (" band: ", guitaristBand)
+    guitaristBandContainer.textContent = ` band:  ${guitaristBand}`
 
     let guitaristAge = response.data[i].age
     guitaristAgeContainer.textContent = ` age:  ${guitaristAge}`
 
     let guitaristDesc = response.data[i].description
-    guitaristDesContainer.textContent = ("description " ,guitaristDesc)
+    guitaristDesContainer.textContent = `description: ${guitaristDesc}`
 
     let guitarName = response.data[i].guitar.modelName
     guitarNameContainer.textContent = (guitarName)
@@ -49,16 +49,16 @@ const getGuitarists = async() => {
     guitarContainer.setAttribute('src', guitarImage)
     
     let guitarBrand= response.data[i].guitar.brand
-    guitarBrandContainer.textContent = ("brand: " ,guitarBrand)
+    guitarBrandContainer.textContent = `brand:  ${guitarBrand}`
 
     let guitarType = response.data[i].guitar.type
-    guitarTypeContainer.textContent = ("type: ",guitarType)
+    guitarTypeContainer.textContent = `type: ${guitarType}`
 
     let guitarPrice= response.data[i].guitar.averagePrice
-    guitarPriceContainer.textContent = ("average price: " ,guitarPrice)
+    guitarPriceContainer.textContent = `average price: ${guitarPrice}`
 
     let guitarDesc = response.data[i].guitar.description
-    guitarDescContainer.textContent = ("description: ",guitarDesc)
+    guitarDescContainer.textContent = `description: ,${guitarDesc}`
 
 console.log(response.data[i].guitar)
 
