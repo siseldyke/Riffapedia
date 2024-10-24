@@ -14,10 +14,11 @@ const excellentButton = document.querySelector('#excellent')
 const guitaristBandContainer = document.querySelector('#guitaristBand')
 const guitaristAgeContainer = document.querySelector('#guitaristAge')
 const guitaristDesContainer = document.querySelector('#guitaristDescription')
+// const BackgroundImageContainer = document.querySelector('#backgroundImage')
 const guitarBrandContainer = document.querySelector('#guitarBrand')
 const guitarTypeContainer = document.querySelector('#guitarType')
 const guitarPriceContainer = document.querySelector('#guitarPrice')
-// const guitarDescContainer = document.querySelector('#guitarDetails')
+
 const hiddenGuitaristDetails = document.querySelector('#guitaristDetails')
 const hiddenGuitarDetails = document.querySelector('#guitarDetails')
 
@@ -41,6 +42,9 @@ const getGuitarists = async() => {
 
     let guitaristDesc = response.data[i].description
     guitaristDesContainer.textContent = `description: ${guitaristDesc}`
+
+    // let guitaristBackgroundImage = response.data[i].backgroundImage
+    // BackgroundImageContainer.setAttribute('src', guitaristBackgroundImage)
 
     let guitarName = response.data[i].guitar.modelName
     guitarNameContainer.textContent = (guitarName)

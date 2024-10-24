@@ -2,9 +2,12 @@ body{
     font-family: "New Rocker", system-ui;
     color: white;
     -webkit-text-stroke: 1px black;
+    background-size: cover;
     
 }
-
+#backgroundImage{
+    background-size: cover;
+}
 .new-rocker-regular {
     font-family: "New Rocker", system-ui;
     font-weight: 400;
@@ -25,15 +28,29 @@ main {
     align-items: center;
     justify-content: space-around;
 }
-
+#guitaristPortrait{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+#guitarPortrait{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
 #guitaristImage{
     max-width: 600px;
     max-height: 700px;
+    
 }
 #guitaristImage:hover{
     opacity: 50%;
 }
+#guitarName{
+    word-wrap: initial;
+}
 #guitarImage{
+    
     max-width: 500px;
     max-height: 600px;
 }
