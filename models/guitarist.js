@@ -9,7 +9,7 @@ const guitaristSchema = new Schema(
         description: { type: String, required: true },
         image: {type: String, required: true},
         guitar: {type: Schema.Types.ObjectId, ref: 'Guitar' },
-        backgroundImage:{type: String, required : true}
+        backgroundImage:{type: String, required : false}
     },
     
     { timestamps: true },
