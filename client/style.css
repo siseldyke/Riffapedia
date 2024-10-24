@@ -54,10 +54,11 @@ main {
 footer{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    
 }
 #billAndTed{
     display: flex;
+    flex-direction: row;
     padding-top: 10%;
     
     max-width: 200px; 

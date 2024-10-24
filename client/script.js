@@ -87,11 +87,32 @@ button.addEventListener('click',  async () => {
     let guitaristImage = response.data[0].image
     imageContainer.setAttribute('src', guitaristImage)
 
+    let guitaristBand = response.data[0].band
+    guitaristBandContainer.textContent = ` band:  ${guitaristBand}`
+
+    let guitaristAge = response.data[0].age
+    guitaristAgeContainer.textContent = ` age:  ${guitaristAge}`
+
+    let guitaristDesc = response.data[0].description
+    guitaristDesContainer.textContent = `description: ${guitaristDesc}`
+
     let guitarName = response.data[0].guitar.modelName
     guitarNameContainer.textContent = (guitarName)
 
     let guitarImage = response.data[0].guitar.image
     guitarContainer.setAttribute('src', guitarImage)
+
+    let guitarBrand= response.data[0].guitar.brand
+    guitarBrandContainer.textContent = `brand:  ${guitarBrand}`
+
+    let guitarType = response.data[0].guitar.type
+    guitarTypeContainer.textContent = `type: ${guitarType}`
+
+    let guitarPrice= response.data[0].guitar.averagePrice
+    guitarPriceContainer.textContent = `average price: ${guitarPrice}`
+
+    let guitarDesc = response.data[0].guitar.description
+    guitarDescContainer.textContent = `description: ,${guitarDesc}`
 })
 
 
