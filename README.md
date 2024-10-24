@@ -43,3 +43,8 @@ https://www.w3schools.com/jsref/event_onload.asp
 https://stackoverflow.com/questions/3842614/how-do-i-call-a-javascript-function-on-page-load
 
 had help from chatgpt for the toggle function
+
+background change source:
+https://www.w3schools.com/jsref/prop_style_backgroundimage.asp
+
+also googles auto AI for the set up for CRUD data

@@ -14,11 +14,11 @@ const excellentButton = document.querySelector('#excellent')
 const guitaristBandContainer = document.querySelector('#guitaristBand')
 const guitaristAgeContainer = document.querySelector('#guitaristAge')
 const guitaristDesContainer = document.querySelector('#guitaristDescription')
-// const BackgroundImageContainer = document.querySelector('#backgroundImage')
+
 const guitarBrandContainer = document.querySelector('#guitarBrand')
 const guitarTypeContainer = document.querySelector('#guitarType')
 const guitarPriceContainer = document.querySelector('#guitarPrice')
-
+const guitarDescContainer = document.querySelector('#guitarDesc')
 const hiddenGuitaristDetails = document.querySelector('#guitaristDetails')
 const hiddenGuitarDetails = document.querySelector('#guitarDetails')
 
@@ -43,8 +43,7 @@ const getGuitarists = async() => {
     let guitaristDesc = response.data[i].description
     guitaristDesContainer.textContent = `description: ${guitaristDesc}`
 
-    // let guitaristBackgroundImage = response.data[i].backgroundImage
-    // BackgroundImageContainer.setAttribute('src', guitaristBackgroundImage)
+    
 
     let guitarName = response.data[i].guitar.modelName
     guitarNameContainer.textContent = (guitarName)
@@ -62,9 +61,11 @@ const getGuitarists = async() => {
     guitarPriceContainer.textContent = `average price: ${guitarPrice}`
 
     let guitarDesc = response.data[i].guitar.description
-    guitarDescContainer.textContent = `description: ,${guitarDesc}`
+    guitarDescContainer.textContent = `description: ${guitarDesc}`
 
-console.log(response.data[i].guitar)
+    document.body.style.backgroundImage = `url('${response.data[i].backgroundImage}')`;
+    
+console.log(response.data[i])
 
 
 }
