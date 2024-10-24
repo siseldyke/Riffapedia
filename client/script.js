@@ -118,6 +118,8 @@ button.addEventListener('click',  async () => {
 
     let guitarDesc = response.data[0].guitar.description
     guitarDescContainer.textContent = `description: ,${guitarDesc}`
+
+    document.body.style.backgroundImage = `url('${response.data[0].backgroundImage}')`;
 })
 
 
