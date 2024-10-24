@@ -48,6 +48,7 @@ main {
 }
 #guitarName{
     word-wrap: initial;
+    max-width: 300px;
 }
 #guitarImage{
     
@@ -63,10 +64,18 @@ main {
 #guitaristDetails{
     display: none;
     font-size: 30px;
+    
 }
 #guitarDetails{
     display: none;
     font-size: 30px;
+    
+}
+#guitaristStuff{
+    min-height: 500px;
+}
+#guitarStuff{
+    min-height: 500px;
 }
 footer{
     display: flex;

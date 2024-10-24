@@ -5,7 +5,7 @@ const brandSchema = new Schema(
         name: { type: String, required: true },
         founder: { type: String, required: true },
         yearFounded:{type: Number, required: true},
-        image:{type: String, required: true}
+        image:{type: String, required: false}
       
     },
     

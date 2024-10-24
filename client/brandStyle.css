@@ -25,10 +25,9 @@ header {
 }
 #fullBrandDetails{
     display: flex;
-    justify-content: center;
-    align-content: center;
+    align-items: center;
     flex-direction: column;
-    
+    width: 100%;
     
     
     
@@ -43,6 +42,9 @@ header {
 #brandDetails{
     display: none;
     font-size: 40px;
+}
+#brandStuff{
+    min-height: 300px;
 }
 #guitarlist{
     display: flex;
