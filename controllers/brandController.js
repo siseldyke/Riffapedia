@@ -27,7 +27,7 @@ const getBrandByName = async (req, res) => {
       const {Name} = req.params
       console.log(Name)
       const brand = await Brand.find( {'name': new RegExp(Name, 'i')})
-      const guitars = await Guitar.find( {'brand': Name})
+      const guitars = await Guitar.find( {'brand': new RegExp(Name, 'i')})
       console.log(guitars, brand)
       if (brand.length > 0) {
           return res.json({brand, guitars});
